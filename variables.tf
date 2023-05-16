@@ -103,3 +103,9 @@ variable "windows_shell_profile" {
   default     = ""
   type        = string
 }
+
+variable "enable_s3_bucket_acl" {
+  description = "Enable S3 Bucket ACL"
+  type        = bool
+  default     = false
+}

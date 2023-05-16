@@ -9,6 +9,8 @@ resource "aws_s3_bucket" "session_logs_bucket" {
 }
 
 resource "aws_s3_bucket_acl" "session_logs_bucket" {
+  count = var.enable_s3_bucket_acl ? 1 : 0
+
   bucket = aws_s3_bucket.session_logs_bucket.id
 
   acl = "private"

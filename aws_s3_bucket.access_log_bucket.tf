@@ -12,6 +12,8 @@ resource "aws_s3_bucket" "access_log_bucket" {
 }
 
 resource "aws_s3_bucket_acl" "access_log_bucket" {
+  count = var.enable_s3_bucket_acl ? 1 : 0
+
   bucket = aws_s3_bucket.access_log_bucket.id
 
   acl = "log-delivery-write"
