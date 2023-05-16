@@ -109,3 +109,9 @@ variable "enable_s3_bucket_acl" {
   type        = bool
   default     = false
 }
+
+variable "session_manager_document_name" {
+  description = "Name of the Session Manager Document"
+  type        = string
+  default     = "SSM-SessionManagerRunShell"
+}
